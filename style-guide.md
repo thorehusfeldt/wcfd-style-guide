@@ -13,17 +13,17 @@ Most items exactly follow one of the forms in this sample:
 
 The input consists of:
 
-- One line with the number $n\in \{1 \le n \le 10\}$ of Blah.
-- One line with the number  $n\in\{1,\ldots, 10\}$ of Foo and the number $m\in \{1,\ldots,  100\}$ of Bar.
+- One line with the number $n\in \\{1,\ldots, 10\\}$ of Blah.
+- One line with the number  $n\in\\{1,\ldots, 10\\}$ of Foo and the number $m\in \\{1,\ldots,  100\\}$ of Bar.
 - One line with the number $a,b,c\in\{1,\ldots, 1000\}$ of Foo, Bar, and Baz, respectively, where  $a \neq b$ and $b < c$.
-- One line with the values $a_1,\ldots, a_n\in \{0,\ldots, 10^9\}$ of the Foos.
-- $n$ lines, each with an integer $k\in\{0,\ldots,  100\}$, ...
+- One line with the values $a_1,\ldots, a_n\in \\{0,\ldots, 10^9\\}$ of the Foos.
+- $n$ lines, each with an integer $k\in\\{0,\ldots,  100\\}$, ...
 - $n$ lines, the $i$th of which contains two integers ...
 - $n$ lines, each with a string $w$ whose length satisfies $1\leq |w|\leq 20$, ...
 - $h$ lines with $w$ characters, each character being either ‘`#`’ or ‘`.`’, ...
 - $h$ lines, each with $w$ strings of $k$ characters $c \in \\{\texttt{r}, \texttt{g}, \texttt{b}\\}$), ...
 - $n$ lines, each containing two numbers describing an event:
-  - The type $e\in \{1,\ldots, 5\}$) of the event, and
+  - The type $e\in \\{1,\ldots, 5\\}$) of the event, and
   - the success probability $p$ as a floating-point number with $0 < p < 1$ given with at most $6$ digits after the decimal point.
 
 An optional remark regarding additional guarantees goes here, _i.e._, that a graph
