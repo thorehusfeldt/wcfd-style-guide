@@ -1,40 +1,39 @@
-# NWERC Problem Statement Style Guide
+# WCFD Problem Statement Style Guide
+
+This is an experimental style guide for WCFD problem statements.
+It is a fork of the NWERC style guide, but prefers to give integer ranges using set notation.
 
 ## Input Sections
 
 Input Sections are in "Dutch style": an itemized list of lines, possibly
-followed by some remarks. Most items
-exactly follow one of the forms in this sample:
+followed by some remarks. 
+Most items exactly follow one of the forms in this sample:
 
 ### Input
 
 The input consists of:
 
-- One line with an integer $n$ ($1 \le n \le 10$), the number of Blah.
-- One line with two integers $n$ and $m$ ($1 \le n \le 10$, $1\le m \le 100$),
-  the number of Foo and the number of Bar.
-- One line with three integers $a$, $b$, and $c$ ($1 \le a, b, c \le 1000$, $a \neq b$, $b < c$),
-  the number of Foo, the number of Bar, and the number of Baz.
-- One line with $n$ integers $a$ ($0\le a\le 10^9$), the values of Foo.
-- One line with $n$ integers $a_1, \ldots, a_n$ ($0\le a_i\le 10^9$ for each $i$),
-  where $a_i$ is the value of Foo.
-- $n$ lines, each with an integer $k$ ($0\leq k \leq 100$), ...
+- One line with the number $n\in \{1 \le n \le 10\}$ of Blah.
+- One line with the number  $n\in\{1,\ldots, 10\}$ of Foo and the number $m\in \{1,\ldots,  100\}$ of Bar.
+- One line with the number $a,b,c\in\{1,\ldots, 1000\}$ of Foo, Bar, and Baz, respectively, where  $a \neq b$ and $b < c$.
+- One line with the values $a_1,\ldots, a_n\in \{0,\ldots, 10^9\}$ of the Foos.
+- $n$ lines, each with an integer $k\in\{0,\ldots,  100\}$, ...
 - $n$ lines, the $i$th of which contains two integers ...
-- $n$ lines, each with a string $w$ ($1\leq |w|\leq 20$), ...
+- $n$ lines, each with a string $w$ whose length satisfies $1\leq |w|\leq 20$, ...
 - $h$ lines with $w$ characters, each character being either ‘`#`’ or ‘`.`’, ...
-- $h$ lines, each with $w$ strings of $k$ characters $c$ ($c \in \\{\texttt{r}, \texttt{g}, \texttt{b}\\}$), ...
+- $h$ lines, each with $w$ strings of $k$ characters $c \in \\{\texttt{r}, \texttt{g}, \texttt{b}\\}$), ...
 - $n$ lines, each containing two numbers describing an event:
-  - An integer $e$ ($1\leq e\leq 5$) the type of the event, and
-  - a floating-point number $p$ ($0 < p < 1$ with at most $6$ digits after the decimal point),
-    the probability of success.
+  - The type $e\in \{1,\ldots, 5\}$) of the event, and
+  - the success probability $p$ as a floating-point number with $0 < p < 1$ given with at most $6$ digits after the decimal point.
 
-An optional remark regarding additional guarantees goes here, i.e. that a graph
+An optional remark regarding additional guarantees goes here, _i.e._, that a graph
 is connected or all input strings have length between $1$ and $20$ characters
 and only consist of English lowercase letters (`a-z`).
 
 <details><summary>LaTeX source</summary>
 
 ```latex
+OUT OF DATE
 \begin{Input}
     The input consists of:
     \begin{itemize}
@@ -71,11 +70,14 @@ and only consist of English lowercase letters (`a-z`).
 
 - Items end with a full stop.
 - Use wording `One line with ...`.
-- Use a comma between the description of what appears in input and the description of what it means.
+- Use a comma between the description of what appears in input and the description of what it means. TODO
 - Do not write `single`. Just say `One line with an integer $n$`.
 - Do not write `Then follow` for bullet points after the first one.
 - When possible, mention all variables at the start of the sentence: `One line with two integers $n$ and $m$ (...), ...`.
 - Do not reuse variable names.
+- Use set notation for integers when possible: `$n\in\{2, \ldots, 100\}$`.
+- Ideally, prepend variables with their meaning: “the nucleotide~$x\in\{A, G, C, T\}$ of the Foo”.
+- Avoid alternating between inequalities and variables: `$1\leq x,y\leq n$` can be misread as two constraints `$1\leq x$` and `$y\leq n$`. For integers, this problem does not appear because $x,y\in\{1,\ldots, n\}$ is preferred.
 - Separate multiple constraints into separate math environments: `($n \leq 100$, $m \leq 100$, $n \neq m$)`.
 - If a constraint is symmetric around zero, use the absolute value: `($\left| x_i \right| \leq 100$)`.
 - Use inclusive lower/upper bounds when possible: `($2 \leq n \leq 100$, $0 \leq m \leq 99\,999$, $1 \leq k < 2 \cdot 10^5$)`.
@@ -102,21 +104,24 @@ and only consist of English lowercase letters (`a-z`).
 
 ## Output Sections
 
-- The basic phrasing is `Output the number of {ABC} such that {XYZ}.`
+We follow NWERC style, except for preferring “write” to “output”;
+the former parses more clearly as a verb.
+
+- The basic phrasing is `Write the number of {ABC} such that {XYZ}.`
 - Don't use funny output phrases, just plain
   `yes`/`no`/`possible`/`impossible`/`infinity` (and all lowercase), whichever is
   appropriate. The statement should both quote and texttt the text:
   ```
   ``\texttt{impossible}''
   ```
-- Output is usually not space sensitive – don't write `Output two lines ...` or `Output two space-separated ...`,
-  just write `Output two ...`
-- Even when the output goes on multiple lines, just writing `Output the number of integers, followed by these integers.` is usually sufficient.
-- If the problem is to find something or output impossible: ` If it is possible to {ABC}, output {XYZ}. Otherwise, output ``\texttt{impossible}''. `
+- Output is usually not space sensitive – don't write `Write two lines ...` or `Write two space-separated ...`,
+  just write `Write two ...`
+- Even when the output goes on multiple lines, just writing `Write the number of integers, followed by these integers.` is usually sufficient.
+- If the problem is to find something or output impossible: ` If it is possible to {ABC}, write {XYZ}. Otherwise, write ``\texttt{impossible}''. `
 - Real-valued tolerance: `Your answer should have an absolute or relative error of at most $10^{-6}$.` (with $10^{-6}$ replaced by
   whatever tolerance the problem uses).
   This sentence should form its own paragraph.
-- Accepting any valid solution: `If there are multiple valid/optimal solutions, you may output any one of them.`
+- Accepting any valid solution: `If there are multiple valid/optimal solutions, you may output any one of them.` (Note the use of “output” as a verb here.)
   This sentence should form its own paragraph.
 - Imposing technical restrictions on the output not part of the
   underlying problem, for the purposes of making judging feasible:
